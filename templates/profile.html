@@ -1,0 +1,24 @@
+<p>
+	First Name: {{user['firstname']}}<br>
+	Last Name: {{user['lastname']}}<br>
+	Email: {{user['email']}}<br>
+	Address: {{user['address']}}<br>
+</p>
+
+<h1>File Upload</h1>
+    	<form method="POST" action="" enctype="multipart/form-data">
+     		<p><input type="file" name="file"></p>
+    		<p><input type="submit" value="Submit"></p>
+    	</form>
+
+{% if wordcount %}
+<p>{{wordcount}}</p>
+
+<a href="/uploads/{{user['username']}}/Limerick.txt" download>Download File</a>
+{% endif %}
+
+<button
+	type="button"
+	onclick="location.href='{{ url_for('index') }}'">
+	Sign Out
+</button>
